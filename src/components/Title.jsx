@@ -46,7 +46,7 @@ const ButtonTitle = styled.button`
   height: 80px;
   border-radius: 40px;
   position: absolute;
-  background-color: #f7ddf7;
+  background-color: #faf0fa;
   opacity: 0.6;
   top: 50%;
   left: 53%;
@@ -57,7 +57,7 @@ const ButtonClose = styled.button`
   width: 80px;
   height: 80px;
   border-radius: 40px;
-  background-color: #f7ddf7;
+  background-color: #f7caf7;
   opacity: 0.6;
   margin-left: auto;
   margin-right: auto;
@@ -72,10 +72,10 @@ const ButtonClose = styled.button`
 const ContainerStart = styled.div``;
 
 const ImageStart = styled.img`
-  opacity: 0.5;
+  opacity: 0.7;
   position: absolute;
   width: 200px;
-  height: 320px;
+  height: 380px;
   top: 50%;
   left: 50%;
   transform: translateY(-50%) translateX(-50%);

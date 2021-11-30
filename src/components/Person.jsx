@@ -14,6 +14,7 @@ const Layout = styled.div`
 const Span = styled.span`
   font-style: oblique;
   color: #1e0322;
+  font-weight: bold;
 `;
 
 
