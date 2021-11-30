@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useState } from "react";
+import axios from "axios";
 import { BrowserRouter, Route, Routes, NavLink } from "react-router-dom";
 import styled from "styled-components";
-import "./App.css";
+import Title from "./components/Title";
 import Day1 from "./screens/Day1";
 import Day2 from "./screens/Day2";
 import Day3 from "./screens/Day3";
@@ -49,24 +50,55 @@ const TabButton = styled(NavLink)`
 `;
 
 function App() {
+  const [start, setStart] = useState(false);
+
+  const getData = () => {
+    const persons = axios(
+      "https://sheet.best/api/sheets/eb6637de-2ec1-45b4-a9d1-001197c620d4"
+    ).then((res) => {
+      let data = res.data.map((item) => {
+        let personArr = Object.values(item);
+        const [date, attribute, story, tasks, blessing, name, imgUrl] =
+          personArr;
+        const person = {
+          date,
+          attribute,
+          story,
+          tasks,
+          blessing,
+          name,
+          imgUrl,
+        };
+        return person;
+      });
+      return data;
+    });
+    return persons;
+  };
+
   return (
     <>
       <GlobalStyle />
       <BrowserRouter>
         <Layout>
-          <Nav>
-            <TabButton to="/day4"> רביעי</TabButton>
-            <TabButton to="/day3"> שלישי</TabButton>
-            <TabButton to="/day2"> שני</TabButton>
+          {!start && <Title setStart={setStart} />}
+          {start && (
+            <>
+              <Nav>
+                <TabButton to="/day4"> רביעי</TabButton>
+                <TabButton to="/day3"> שלישי</TabButton>
+                <TabButton to="/day2"> שני</TabButton>
 
-            <TabButton to="/day1"> ראשון</TabButton>
-          </Nav>
-          <Routes>
-            <Route path="/day1" element={<Day1 />} />
-            <Route path="/day2" element={<Day2 />} />
-            <Route path="/day3" element={<Day3 />} />
-            <Route path="/day4" element={<Day4 />} />
-          </Routes>
+                <TabButton to="/day1"> ראשון</TabButton>
+              </Nav>
+              <Routes>
+                <Route path="/day1" element={<Day1 getData={getData} />} />
+                <Route path="/day2" element={<Day2 getData={getData} />} />
+                <Route path="/day3" element={<Day3 getData={getData} />} />
+                <Route path="/day4" element={<Day4 getData={getData} />} />
+              </Routes>{" "}
+            </>
+          )}
         </Layout>
       </BrowserRouter>
     </>
