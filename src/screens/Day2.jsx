@@ -2,22 +2,29 @@ import React, { useEffect, useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
 import { MdOutlineNavigateBefore } from "react-icons/md";
 import Person from "../components/Person";
-import { Avatar, Image, Layout, NavButton, NavSection,AttributtTitle } from "../styles";
+import {
+  Avatar,
+  Image,
+  Layout,
+  NavButton,
+  NavSection,
+  AttributtTitle,
+} from "../styles";
 import hatuna2 from "../assets/hatuna2.png";
 
 export default function Day2({ getData }) {
   const [route, setRaote] = useState();
   const [person, setPerson] = useState();
   const [persons, setPersons] = useState([]);
-  const getPersonsData = async () => {
-    const res = await getData();
-    const arr = res.slice(5, 10);
-    setPersons([...arr]);
-  };
 
   useEffect(() => {
+    const getPersonsData = async () => {
+      const res = await getData();
+      const arr = res.slice(5, 10);
+      setPersons([...arr]);
+    };
     getPersonsData();
-  }, []);
+  }, [getData]);
 
   const handleNextButton = () => {
     if (!person) {
@@ -50,7 +57,6 @@ export default function Day2({ getData }) {
   const hadleOpenPerson = () => {
     if (person) {
       setRaote(person.name);
-      
     }
   };
 
@@ -72,17 +78,25 @@ export default function Day2({ getData }) {
         <NavButton onClick={handleBeforeButton}>
           <MdOutlineNavigateBefore />
         </NavButton>
-        
-          {person ? <a href="#person"><Avatar onClick={hadleOpenPerson}> <h4>{`"${person.attribute}"`}</h4> </Avatar>  </a>: <AttributtTitle><h4>התכונות שלי </h4></AttributtTitle>}
-        
-       
+
+        {person ? (
+          <a href="#person">
+            <Avatar onClick={hadleOpenPerson}>
+              {" "}
+              <h4>{`"${person.attribute}"`}</h4>{" "}
+            </Avatar>{" "}
+          </a>
+        ) : (
+          <AttributtTitle>
+            <h4>התכונות שלי </h4>
+          </AttributtTitle>
+        )}
+
         <NavButton onClick={handleNextButton}>
           <MdNavigateNext />
         </NavButton>
       </NavSection>
-      <div id="person">
-      {route && <Person person={person} />}
-      </div>
+      <div id="person">{route && <Person person={person} />}</div>
     </Layout>
   );
 }

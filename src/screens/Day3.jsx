@@ -17,15 +17,15 @@ export default function Day3({ getData }) {
   const [person, setPerson] = useState();
   const [persons, setPersons] = useState([]);
 
-  const getPersonsData = async () => {
-    const res = await getData();
-    const arr = res.slice(10, 15);
-    setPersons([...arr]);
-  };
 
   useEffect(() => {
+    const getPersonsData = async () => {
+      const res = await getData();
+      const arr = res.slice(10,14);
+      setPersons([...arr]);
+    };
     getPersonsData();
-  }, []);
+  }, [getData]);
 
   const handleNextButton = () => {
     if (!person) {

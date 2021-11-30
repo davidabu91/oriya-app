@@ -10,21 +10,22 @@ import {
   NavButton,
   NavSection,
 } from "../styles";
-import oriyadavid from "../assets/oriaaanddavid.jpg";
 
 export default function Day4({ getData }) {
   const [route, setRaote] = useState();
   const [person, setPerson] = useState();
   const [persons, setPersons] = useState([]);
-  const getPersonsData = async () => {
-    const res = await getData();
-    const arr = res.slice(15);
-    setPersons([...arr]);
-  };
+
+
 
   useEffect(() => {
+    const getPersonsData = async () => {
+      const res = await getData();
+      const arr = res.slice(14);
+      setPersons([...arr]);
+    };
     getPersonsData();
-  }, []);
+  }, [getData]);
 
   const handleNextButton = () => {
     if (!person) {
