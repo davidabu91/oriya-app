@@ -19,7 +19,7 @@ const Layout = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  margin-bottom: 45px;
+  margin-bottom: 0px;
 `;
 
 const TabButton = styled(NavLink)`
@@ -32,15 +32,12 @@ const TabButton = styled(NavLink)`
   height: 30px;
   width: 60px;
   margin-left: 15px;
+  border-radius: 10px;
+  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
 
-  &:first-child {
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-  }
-
-  &:last-child {
-    border-top-right-radius: 15px;
-    border-bottom-right-radius: 15px;
+  :active {
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
   }
 
   &.active {
@@ -53,6 +50,7 @@ function App() {
   const [start, setStart] = useState(false);
 
   const getData = () => {
+    try{
     const persons = axios(
       "https://sheet.best/api/sheets/eb6637de-2ec1-45b4-a9d1-001197c620d4"
     ).then((res) => {
@@ -73,7 +71,10 @@ function App() {
       });
       return data;
     });
-    return persons;
+    return persons;}
+    catch(error){
+      alert(error)
+    }
   };
 
   return (

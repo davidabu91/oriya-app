@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Image} from '../styles';
+import {Image, Wrapper} from '../styles';
 
 const Layout = styled.div`
   align-items: center;
@@ -21,6 +21,7 @@ export default function Person({ person }) {
 
   
   return (
+    <Wrapper>
     <Layout>
       <h4>{person.name}</h4>
       <Span>:זיכרון נוסטלגי</Span>
@@ -36,5 +37,6 @@ export default function Person({ person }) {
         ></Image>
       )}
     </Layout>
+    </Wrapper>
   );
 }

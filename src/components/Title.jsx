@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
 import oriyastartimage from "../assets/oriyastart.jpg";
-import oriyaIcon from '../assets/oriyaIcon.jpg';
+
 const animation = keyframes`
   0% { opacity: 0; transform: translateY(-100px); }
   25% { opacity: 1; transform: translateY(0px); }
