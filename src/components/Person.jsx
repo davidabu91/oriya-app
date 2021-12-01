@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import {Image, Wrapper} from '../styles';
+import {PersonImage, Wrapper} from '../styles';
 
 const Layout = styled.div`
   align-items: center;
@@ -32,10 +32,10 @@ export default function Person({ person }) {
       <Span>:ברכה מהלב</Span>
       <p>{person.blessing}</p>
       {person.imgUrl && (
-        <Image
+        <PersonImage
           src={`https://drive.google.com/thumbnail?id=${person.imgUrl}`}
           alt=""
-        ></Image>
+        ></PersonImage>
       )}
     </Layout>
     </Wrapper>

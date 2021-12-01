@@ -27,8 +27,14 @@ export const GlobalStyle = createGlobalStyle `
 
 export const Image = styled.img `
 width: 280px;
-height: 230;
-border-radius: 75px;
+height: 150px;
+border-radius: 50px;
+`;
+
+export const PersonImage = styled.img `
+width: 280px;
+height: 150px;
+border-radius: 50px;
 `;
 
 export const Layout = styled.div `
@@ -46,7 +52,7 @@ export const Layout = styled.div `
 
   p {
     font-weight: bolder;
-
+    justify-content: center;
   }
 
 `;
