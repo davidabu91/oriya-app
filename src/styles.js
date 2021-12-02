@@ -88,14 +88,20 @@ export const Avatar = styled.button `
 
 export const AttributtTitle = styled.button `
   width: 100px;
-  height: 100px;
-  border-radius: 75px;
+  height: 70px;
+  border-radius: 15px;
   border: solid 1.5px black;
   color: #18031f;
   opacity: 0.8;
   background-color: #fff;
   font-style: italic;
+  border-radius: 10px;
+  box-shadow: 0 0.3rem rgba(121, 121, 121, 0.65);
 
+  :active {
+    transform: translate(0, 0.3rem);
+    box-shadow: 0 0.1rem rgba(255, 255, 255, 0.65);
+  }
 
   h4 {
     font-size: larger;

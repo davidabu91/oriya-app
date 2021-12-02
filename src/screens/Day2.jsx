@@ -31,7 +31,9 @@ export default function Day2({ getData }) {
     };
     getPersonsData();
   }, [getData]);
-
+  const startPersonData = () => {
+    if (!person) setPerson(persons[0]);
+  }
   const handleNextButton = () => {
     if (!person) {
       setPerson(persons[0]);
@@ -117,29 +119,29 @@ export default function Day2({ getData }) {
       </Gift>
         </>
         }
-      <NavSection>
-        <NavButton onClick={handleBeforeButton}>
-          <MdOutlineNavigateBefore />
-        </NavButton>
-
-        {person ? (
-          <a href="#person">
-            <Avatar onClick={hadleOpenPerson}>
-              {" "}
-              <h4>{`"${person.attribute}"`}</h4>{" "}
-            </Avatar>{" "}
-          </a>
-        ) : (
-          <AttributtTitle>
+   <NavSection>
+        {person && (
+          <>
+            <NavButton onClick={handleBeforeButton}>
+              <MdOutlineNavigateBefore />
+            </NavButton>
+            <a href="#person">
+              <Avatar onClick={hadleOpenPerson}>
+                {" "}
+                <h4>{`"${person.attribute}"`}</h4>{" "}
+              </Avatar>{" "}
+            </a>
+            <NavButton onClick={handleNextButton}>
+              <MdNavigateNext />
+            </NavButton>
+          </>
+        )}
+        {!person && (
+          <AttributtTitle onClick={startPersonData}>
             <h4>התכונות שלי </h4>
           </AttributtTitle>
         )}
-
-        <NavButton onClick={handleNextButton}>
-          <MdNavigateNext />
-        </NavButton>
-      </NavSection>
-      <div id="person">{route && <Person person={person} />}</div>
+      </NavSection>      <div id="person">{route && <Person person={person} />}</div>
     </Layout>
   );
 }
