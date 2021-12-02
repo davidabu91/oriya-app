@@ -3,6 +3,9 @@ import { MdNavigateNext } from "react-icons/md";
 import { MdOutlineNavigateBefore } from "react-icons/md";
 import Person from "../components/Person";
 import Summary from "../components/Summary";
+import gift from "../assets/gift.jpg";
+import Gift from '../components/Gift';
+
 import {
   AttributtTitle,
   Avatar,
@@ -10,6 +13,7 @@ import {
   Layout,
   NavButton,
   NavSection,
+  ContainerRelative
 } from "../styles";
 
 export default function Day4({ getData }) {
@@ -18,6 +22,8 @@ export default function Day4({ getData }) {
   const [persons, setPersons] = useState([]);
   const [attributes, setAttributes] = useState([]);
   const [time, setTime] = useState();
+  const [showGift, setShowGift] = useState(false);
+
 
   useEffect(() => {
     const getPersonsData = async () => {
@@ -77,6 +83,7 @@ export default function Day4({ getData }) {
     <Layout>
       <h2>חלומות יצירה ואתגר</h2>
       <p>?מה עושים היום</p>
+      <ContainerRelative>
       <a
         href="https://www.rest.co.il/kosher-restaurants/israel/chefs-restaurant/kosher/"
         target="_blank"
@@ -88,7 +95,36 @@ export default function Day4({ getData }) {
           alt=""
         />
       </a>
-      <p>!מתנה</p>
+      <h3>!קח אותי לשם</h3>
+
+      </ContainerRelative>
+      <p>:מתנה</p>
+      <ContainerRelative>
+        {" "}
+        <button onClick={()=>setShowGift(true)}>
+        <Image src={gift} alt="" />
+        <h3 >
+         !קח אותי לשם
+        </h3>
+        </button>
+      </ContainerRelative>
+      {showGift && <>
+      <Gift>
+        <p>אוריה שלי אהובתי חמדתי </p>
+        <p>יקרה שלי</p>
+        <p>היום אתן לך תיק ושעון</p>
+        <p>שעון כי צריך</p>
+        <p>ותיק כדי לאסוף ולשמור</p>
+        <p>את עצמך</p>
+        <p>את עוצמתך</p>
+        <p>ואת שנינו</p>
+        <p>וכדי לחסוך זמן והתלבטות</p>
+        <p>בואי ניסע ישר לחנות</p>
+        <button style={{border: "none", background: "none"}} onClick={()=>setShowGift(false)}> X</button>
+
+      </Gift>
+        </>
+        }
       <NavSection>
         <NavButton onClick={handleBeforeButton}>
           <MdOutlineNavigateBefore />

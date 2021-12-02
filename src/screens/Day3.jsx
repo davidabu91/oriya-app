@@ -3,6 +3,8 @@ import { MdNavigateNext } from "react-icons/md";
 import { MdOutlineNavigateBefore } from "react-icons/md";
 import Person from "../components/Person";
 import image from "../assets/paradive.png";
+import gift from "../assets/gift.jpg";
+import Gift from '../components/Gift';
 import {
   AttributtTitle,
   Avatar,
@@ -10,18 +12,19 @@ import {
   Layout,
   NavButton,
   NavSection,
+  ContainerRelative,
 } from "../styles";
 
 export default function Day3({ getData }) {
   const [route, setRaote] = useState();
   const [person, setPerson] = useState();
   const [persons, setPersons] = useState([]);
-
+  const [showGift, setShowGift] = useState(false);
 
   useEffect(() => {
     const getPersonsData = async () => {
       const res = await getData();
-      const arr = res.slice(10,14);
+      const arr = res.slice(10, 14);
       setPersons([...arr]);
     };
     getPersonsData();
@@ -63,15 +66,54 @@ export default function Day3({ getData }) {
     <Layout>
       <h2>קלילות החיים והשמחה</h2>
       <p>?מה עושים היום</p>
-      <a
-        href="https://www.paradive.co.il/"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
+      <ContainerRelative>
+        <a
+          href="https://www.paradive.co.il/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          <Image src={image} alt="" />
+        </a>
+        <h3>!קח אותי לשם</h3>
+      </ContainerRelative>
+      <p>?מה אוכלים היום</p>
+      <ContainerRelative>
+        <a
+          href="https://kaparaburger.co.il/"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {" "}
+          <Image
+            src="https://d3o5sihylz93ps.cloudfront.net/app/uploads/2019/03/10143717/274-Custom.jpg"
+            alt=""
+          />
+        </a>
+        <h3>!קח אותי לשם</h3>
+      </ContainerRelative>
+      <p>:מתנה</p>
+      <ContainerRelative>
         {" "}
-        <Image src={image} alt="" />
-      </a>
-      <p>!מתנה</p>
+        <button onClick={()=>setShowGift(true)}>
+        <Image src={gift} alt="" />
+        <h3 >
+         !קח אותי לשם
+        </h3>
+        </button>
+      </ContainerRelative>
+      {showGift && <>
+      <Gift>
+        <p>אוריה שלי אהובתי חמדתי </p>
+        <p>איזה כייף שיש סיבה למסיבה</p>
+        <p>היום קצר והמלאכה מרובה</p>
+        <p>אז חכי למחר</p>
+        <p>ותקבלי מתנה כפולה</p>
+        <button style={{border: "none", background: "none"}} onClick={()=>setShowGift(false)}> X</button>
+
+      </Gift>
+        </>
+        }
       <NavSection>
         <NavButton onClick={handleBeforeButton}>
           <MdOutlineNavigateBefore />

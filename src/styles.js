@@ -31,6 +31,7 @@ height: 150px;
 border-radius: 50px;
 `;
 
+
 export const PersonImage = styled.img `
 width: 280px;
 height: 150px;
@@ -124,4 +125,23 @@ export const Wrapper = styled.span `
   animation-iteration-count: 1;
   display: flex;
   flex-direction: column;
+`;
+
+export const ContainerRelative = styled.div `
+  position: relative;
+  
+  h3 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-weight: bolder;
+    font-size: 20px;
+    color: white;
+  }
+
+  button {
+    border: none;
+    background: none;
+  }
 `;

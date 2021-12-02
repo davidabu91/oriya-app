@@ -15,6 +15,13 @@ const Wrapper = styled.span`
   animation-iteration-count: 1;
   display: flex;
   flex-direction: column;
+
+  div {
+    padding: 30px 40px 5px 40px;
+  }
+  p {
+    text-align: center;
+  }
 `;
 
 const StyledModal = styled.div`
@@ -27,49 +34,52 @@ const StyledModal = styled.div`
   box-shadow: 0 10px 10px 10px rgba(0, 0, 0, 0.2);
   border-radius: 5px;
   margin-top: 2.5rem;
-
-
-  p {
-    text-align: center;
-    padding: 40px 40px 30px 40px;
-  }
 `;
 
 const Layout = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
+
+  h1 {
+    margin: 25px;
+  }
 `;
 
 const ButtonTitle = styled.button`
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
-  position: absolute;
+  height: 50px;
+  width: 190px;
+  margin-left: 15px;
+  border-radius: 10px;
+  box-shadow: 0.3rem 0.3rem rgba(121, 121, 121, 0.65);
   background-color: #faf0fa;
+  position: absolute;
   opacity: 0.6;
-  top: 50%;
-  left: 53%;
-  transform: translateY(-50%);
+  top: 85%;
+  left: 46%;
+  transform: translateY(-50%) translateX(-50%);
 `;
 
 const ButtonClose = styled.button`
-  width: 80px;
-  height: 80px;
-  border-radius: 40px;
-  background-color: #f7caf7;
-  opacity: 0.6;
+  height: 50px;
+  width: 190px;
+  margin-left: 15px;
+  border-radius: 10px;
+  box-shadow: 0.3rem 0.3rem rgba(121, 121, 121, 0.65);
+  background-color: #faf0fa;
   margin-left: auto;
   margin-right: auto;
 
   span {
-      color: #290527;
-      font-size: larger;
-      font-weight: bold;
+    color: #290527;
+    font-size: larger;
+    font-weight: bold;
   }
 `;
 
-const ContainerStart = styled.div``;
+const ContainerStart = styled.div`
+  margin-top: 70px;
+`;
 
 const ImageStart = styled.img`
   opacity: 0.7;
@@ -110,24 +120,30 @@ export default function Title({ setStart }) {
           onEscapeKeydown={toggleModal}
         >
           <Wrapper>
-            <p>
-              אוריה אהובתי חשבתי וחשבתי וחשבתי איך אוכל להפתיע אותך איך אוכל
-              להרים לך ובעיקר כיצד תוכלי לחגוג באמת אך גם לקבל ערך אז אולי זה לא
-              הכי נקי ויש עוד מלא שיפורים אבל בכל זאת בניתי קונספט שאכן כולל גם
-              אפליקציה קטנה חוויות מתנות וברכות הכל כדי לרגש אותך לשמח אותך
-              ובעיקר להרים לך את המלכה שלי אני אוהב אותך אני מזמין אותך לצאת
-              איתי יחד לחוויה מגניבה משמחת ומרגשת אני בטוח שיהיה כייף קדימה
-              יוצאים לדרך
-            </p>
-
+            <div>
+              <p>אוריה אהובתי</p>
+              <p>
+                חשבתי וחשבתי וחשבתי איך אוכל להפתיע אותך איך אוכל להרים לך
+                ובעיקר כיצד תוכלי לחגוג באמת אך גם לקבל ערך
+              </p>
+              <p>
+                אז בניתי אפליקציה קטנה ואולי זה לא הכי נקי ויש עוד שיפורים 
+                </p>
+                <p>
+                בכל יום נעסוק בתקופה אחרת בחייך דרך חוויה, מתנה, אוכל טוב וברכות מהיקרים לך
+                </p>
+              <p>
+                את המלכה שלי אני אוהב אותך ואני מזמין אותך לצאת איתי יחד לחוויה
+                מגניבה משמחת ומרגשת אני בטוח שיהיה כייף
+              </p>
+            </div>
             <ButtonClose
               onClick={() => {
                 toggleModal();
                 setStart(true);
               }}
             >
-                <span>
-              !יאללה</span>
+              <span>!יאללה</span>
             </ButtonClose>
           </Wrapper>
         </StyledModal>

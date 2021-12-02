@@ -2,6 +2,9 @@ import React, { useEffect, useState } from "react";
 import { MdNavigateNext } from "react-icons/md";
 import { MdOutlineNavigateBefore } from "react-icons/md";
 import Person from "../components/Person";
+import gift from "../assets/gift.jpg";
+import Gift from '../components/Gift';
+
 import {
   AttributtTitle,
   Avatar,
@@ -9,12 +12,15 @@ import {
   Layout,
   NavButton,
   NavSection,
+  ContainerRelative
 } from "../styles";
 
 export default function Day1({ getData }) {
   const [route, setRaote] = useState();
   const [person, setPerson] = useState();
   const [persons, setPersons] = useState([]);
+  const [showGift, setShowGift] = useState(false);
+
 
   useEffect(() => {
     const getPersonsData = async () => {
@@ -24,6 +30,7 @@ export default function Day1({ getData }) {
     };
     getPersonsData();
   }, [getData]);
+
 
   const handleNextButton = () => {
     if (!person) {
@@ -61,6 +68,8 @@ export default function Day1({ getData }) {
     <Layout>
       <h2>ילדות</h2>
       <p>?מה עושים היום</p>
+
+      <ContainerRelative>
       <a
         href="https://yaaracacao.co.il/he/product/praline-workshop/"
         target="_blank"
@@ -70,9 +79,12 @@ export default function Day1({ getData }) {
         <Image
           src="https://yaaracacao.co.il/wp-content/uploads/2020/05/%D7%A1%D7%93%D7%A0%D7%AA-%D7%A4%D7%A8%D7%9C%D7%99%D7%A0%D7%99%D7%9D-%D7%99%D7%97%D7%99%D7%93.jpg"
           alt=""
-        />
+        ></Image>
+      <h3>!קח אותי לשם</h3>
       </a>
-      <p>המלון שלנו לימים הקרובים</p>
+      </ContainerRelative>
+      <p>:המלון שלנו לימים הקרובים</p>
+      <ContainerRelative>
       <a
         href="https://www.mizpe-hayamim.co.il/"
         target="_blank"
@@ -84,6 +96,48 @@ export default function Day1({ getData }) {
           alt=""
         />
       </a>
+      <h3>!קח אותי לשם</h3>
+
+      </ContainerRelative>
+      <p>?מה אוכלים היום</p>
+      <ContainerRelative>
+      <a
+        href="https://www.mizpe-hayamim.co.il/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {" "}
+        <Image
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-Mz08Yb4DfjpKDTZN8aDyOjWsDoGunWrpYg&usqp=CAU"
+          alt=""
+        />
+      </a>
+      <h3>!קח אותי לשם</h3>
+
+      </ContainerRelative>
+
+      <p>:מתנה</p>
+      <ContainerRelative>
+        {" "}
+        <button onClick={()=>setShowGift(true)}>
+        <Image src={gift} alt="" />
+        <h3 >
+         !קח אותי לשם
+        </h3>
+        </button>
+      </ContainerRelative>
+      {showGift && <>
+      <Gift>
+        <p>אוריה שלי אהובתי חמדתי </p>
+        <p>אהבתי אלייך עצומה כאש גופרית</p>
+        <p>לכבוד יום הולדתך קבלי מתנה תכשיט</p>
+        <p>וכדי לחסוך זמן והתלבטות</p>
+        <p>בואי ניסע ישר לחנות</p>
+        <button style={{border: "none", background: "none"}} onClick={()=>setShowGift(false)}> X</button>
+
+      </Gift>
+        </>
+        }
       <NavSection>
         <NavButton onClick={handleBeforeButton}>
           <MdOutlineNavigateBefore />
