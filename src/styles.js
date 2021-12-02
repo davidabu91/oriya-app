@@ -87,7 +87,7 @@ export const Avatar = styled.button `
 `;
 
 export const AttributtTitle = styled.button `
-  width: 100px;
+  width: 130px;
   height: 70px;
   border-radius: 15px;
   border: solid 1.5px black;
