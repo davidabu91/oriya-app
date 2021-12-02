@@ -140,7 +140,7 @@ export default function Day4({ getData }) {
             <a href="#person">
               <Avatar onClick={hadleOpenPerson}>
                 {" "}
-                <h4>{`"${person.attribute}"`}</h4>{" "}
+                <h4>{person.attribute}</h4>{" "}
               </Avatar>{" "}
             </a>
             <NavButton onClick={handleNextButton}>
