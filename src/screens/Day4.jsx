@@ -156,17 +156,20 @@ export default function Day4({ getData }) {
       </NavSection>
       <div id="person">{route && <Person person={person} />}</div>{" "}
       {time > 14 && <Summary attributes={attributes} />}
-      {time > 17 && (
-        <div>
-          <p>?חשבת שסיימנו</p>
+      {time > 17 && ( <>
+                  <p>?חשבת שסיימנו</p>
 
-          <a href="https://dugo.co.il/post_show/%D7%90%D7%93%D7%99%D7%A8-%D7%9E%D7%99%D7%9C%D7%A8-%D7%91%D7%A0%D7%99%D7%99%D7%A0%D7%99-%D7%94%D7%90%D7%95%D7%9E%D7%94-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D/">
+
+          <a href="https://dugo.co.il/post_show/%D7%90%D7%93%D7%99%D7%A8-%D7%9E%D7%99%D7%9C%D7%A8-%D7%91%D7%A0%D7%99%D7%99%D7%A0%D7%99-%D7%94%D7%90%D7%95%D7%9E%D7%94-%D7%99%D7%A8%D7%95%D7%A9%D7%9C%D7%99%D7%9D/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+          >
             <Image
               src="https://img.mako.co.il/2020/03/18/adirmiller_i.jpg"
               alt=""
             ></Image>
           </a>
-        </div>
+        </>
       )}
     </Layout>
   );
