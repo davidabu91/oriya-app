@@ -97,7 +97,7 @@ function App() {
       if (date === "2021-12-7") setRoute4("message4");
     }
 
-    if(date === "2021-12-5") prodaction();
+    if(date === "2021-12-5" || "2021-12-6" || "2021-12-7" || "2021-12-8") prodaction();
 
   }, []);
 
