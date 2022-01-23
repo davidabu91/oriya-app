@@ -27,7 +27,7 @@ export default function Person({ person }) {
       <h4>{person.name}</h4>
       <Span>:זיכרון נוסטלגי</Span>
       <p>{person.story}</p>
-      <Span>:משימות לאוריה עד גיל 40</Span>
+      <Span>:משימות לאפרת עד גיל 40</Span>
       <p>{person.tasks}</p>
       <Span>:ברכה מהלב</Span>
       <p>{person.blessing}</p>
