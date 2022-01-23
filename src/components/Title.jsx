@@ -104,7 +104,7 @@ export default function Title({ setStart }) {
     <Layout>
       {!isOpen && (
         <>
-          <h1> חוגגים 30 לאוריה</h1>
+          <h1> חוגגים 30 לאפרת</h1>
           <ContainerStart>
             <ImageStart src={oriyastartimage} alt="" />
             <ButtonTitle onClick={toggleModal}>
@@ -121,7 +121,7 @@ export default function Title({ setStart }) {
         >
           <Wrapper>
             <div>
-              <p>אוריה אהובתי</p>
+              <p>אפרת אהובתי</p>
               <p>
                 חשבתי וחשבתי וחשבתי איך אוכל להפתיע אותך איך אוכל להרים לך
                 ובעיקר כיצד תוכלי לחגוג באמת אך גם לקבל ערך
