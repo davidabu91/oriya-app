@@ -15,6 +15,8 @@ const Wrapper = styled.span`
   animation-iteration-count: 1;
   display: flex;
   flex-direction: column;
+  font-weight: bold;
+
 
   div {
     padding: 30px 40px 5px 40px;

@@ -9,6 +9,8 @@ const Layout = styled.div`
   padding: 35px;
   width: 360px;
   text-align: center;
+  font-weight: bold;
+
 `;
 
 const Span = styled.span`

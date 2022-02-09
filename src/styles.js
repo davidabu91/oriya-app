@@ -7,9 +7,12 @@ export const colors = {
 };
 
 export const GlobalStyle = createGlobalStyle `
-    * {
+        
+
+* {
         box-sizing: border-box;
     }
+    
     
     body {
         color: #120118;
@@ -44,6 +47,9 @@ export const Layout = styled.div `
   flex-direction: column;
   min-height: 100vh;
   padding: 35px;
+  font-weight: bold;
+
+
 
   h2 {
       font-size: 30px;
@@ -113,6 +119,8 @@ export const NavButton = styled.button `
   background: none;
   border: none;
   font-size: 50px;
+  font-weight: bold;
+
   :active {
     transform: translate(0, 0.3rem);
 }
