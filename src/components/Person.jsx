@@ -27,6 +27,10 @@ export default function Person({ person }) {
       <h4>{person.name}</h4>
       <Span>:זיכרון נוסטלגי</Span>
       <p>{person.story}</p>
+      <Span>:אני אוהב/ת לדבר עם אפרת על </Span>
+      <p>{person.talk}</p>
+      <Span> :עושה לי את השבוע/השבת</Span>
+      <p>{person.week}</p>
       <Span>:משימות לאפרת עד גיל 40</Span>
       <p>{person.tasks}</p>
       <Span>:ברכה מהלב</Span>
@@ -39,5 +43,6 @@ export default function Person({ person }) {
       )}
     </Layout>
     </Wrapper>
+    
   );
 }

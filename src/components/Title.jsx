@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled, { keyframes } from "styled-components";
-import oriyastartimage from "../assets/oriyastart.jpg";
+import efratstartimage from "../assets/efratStart.jpg";
 
 const animation = keyframes`
   0% { opacity: 0; transform: translateY(-100px); }
@@ -61,8 +61,8 @@ const ButtonTitle = styled.button`
 `;
 
 const ButtonClose = styled.button`
-  height: 50px;
-  width: 190px;
+  height: 70px;
+  width: 200px;
   margin-left: 15px;
   border-radius: 10px;
   box-shadow: 0.3rem 0.3rem rgba(121, 121, 121, 0.65);
@@ -82,7 +82,7 @@ const ContainerStart = styled.div`
 `;
 
 const ImageStart = styled.img`
-  opacity: 0.7;
+  opacity: 0.9;
   position: absolute;
   width: 200px;
   height: 380px;
@@ -106,7 +106,7 @@ export default function Title({ setStart }) {
         <>
           <h1> חוגגים 30 לאפרת</h1>
           <ContainerStart>
-            <ImageStart src={oriyastartimage} alt="" />
+            <ImageStart src={efratstartimage} alt="" />
             <ButtonTitle onClick={toggleModal}>
               <h4>Let's Start! </h4>{" "}
             </ButtonTitle>
@@ -121,22 +121,22 @@ export default function Title({ setStart }) {
         >
           <Wrapper>
             <div>
-              <p>אפרת אהובתי</p>
+              <p>!אפרת אהובתי היקרה</p>
               <p>
-                חשבתי וחשבתי וחשבתי איך אוכל להפתיע אותך איך אוכל להרים לך
-                ובעיקר כיצד תוכלי לחגוג באמת אך גם לקבל ערך
+               אם חשבת לרגע קטן ושטותי <br />
+                שאתעלם מיום כל כך משמעותי <br />
+                שבו את רשמית עומדת לגלוש <br />
+                לעידן של קידומת שלוש
               </p>
               <p>
-                אז בניתי אפליקציה קטנה ואולי זה לא הכי נקי ויש עוד שיפורים 
-                </p>
-                <p>
-                בכל יום נעסוק בתקופה אחרת בחייך דרך חוויה, מתנה, אוכל טוב וברכות מהיקרים לך
-                <span style={{fontSize: "12px"}}> (לא מבטיח שהכל יהיה קשור, תזרמי)</span>
-
-                </p>
+                אז טעית, כי אין, אין מצב בעולם <br />
+                שאני אפספס כזה עיתוי מושלם
+              </p>
               <p>
-                את המלכה שלי אני אוהב אותך ואני מזמין אותך לצאת איתי יחד לחוויה
-                מגניבה משמחת ומרגשת אני בטוח שיהיה כייף
+                אז בלי פרצופים, קבלי בשמחה <br />
+                טיול שהוא הפתעה וחגיגה <br />
+                שנבלה, נהנה ונכבש כל יעד <br />
+                ושאהבתנו תקוד לעד
               </p>
             </div>
             <ButtonClose
@@ -145,7 +145,7 @@ export default function Title({ setStart }) {
                 setStart(true);
               }}
             >
-              <span>!יאללה</span>
+              <span>תלחצי על הקישור  <br />ותגלי מה הולך להיות בקיצור</span>
             </ButtonClose>
           </Wrapper>
         </StyledModal>
