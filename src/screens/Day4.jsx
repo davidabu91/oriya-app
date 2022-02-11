@@ -26,7 +26,7 @@ export default function Day4({ personsData }) {
       setAttributes([...attributesArr]);
     };
     getAttributes();
-  }, []);
+  }, [personsData]);
 
 
 
