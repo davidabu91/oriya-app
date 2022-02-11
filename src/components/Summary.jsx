@@ -31,7 +31,7 @@ function Item ({elemnet}) {
 export default function Summary({ attributes }) {
   return (
     <Layout>
-        <h1> כל התכונות שלי</h1>
+        <h3> כל התכונות שלי</h3>
       {attributes.map((element, index) => {
         return <Item key={index} elemnet={element}/>
       })}

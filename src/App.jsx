@@ -6,6 +6,8 @@ import Title from "./components/Title";
 import Day1 from "./screens/Day1";
 import Day2 from "./screens/Day2";
 import Day3 from "./screens/Day3";
+import Day4 from "./screens/Day4";
+
 import Message from './components/Message';
 import { GlobalStyle } from "./styles";
 
@@ -52,6 +54,8 @@ function App() {
   const route1 = "day1"
   const [route2, setRoute2] = useState("day2");
   const [route3, setRoute3] = useState("day3");
+  const [route4, setRoute4] = useState("day4");
+
 
   const getData = () => {
     try {
@@ -89,7 +93,7 @@ function App() {
       setPersonsData(res);
     }
     getPorsons();
-  },[])
+  }, [])
 
 
   useEffect(() => {
@@ -101,18 +105,19 @@ function App() {
       "-" +
       today.getDate();
 
-    console.log(date);  
+    console.log(date);
 
-    function prodaction () {
-      if (date === "2022-2-9") {setRoute2("message2");setRoute3("message3"); };
-      if (date === "2022-2-10"){setRoute3("message3");  };
+    function prodaction() {
+      if (date === "2022-2-9") { setRoute2("message2"); setRoute3("message3"); };
+      if (date === "2022-2-10") { setRoute3("message3"); };
+      if(date === "2022-2-11") {setRoute4("message4")};
     }
 
-    if(date === "2022-2-9" || "2022-2-10" || "2022-2-11") prodaction();
+    if (date === "2022-2-9" || "2022-2-10" || "2022-2-11") prodaction();
 
   }, []);
 
-  
+
 
   return (
     <>
@@ -123,6 +128,8 @@ function App() {
           {start && (
             <>
               <Nav>
+                <TabButton to={route4}> מוצ"ש</TabButton>
+
                 <TabButton to={route3}> שישי</TabButton>
                 <TabButton to={route2}> חמישי</TabButton>
                 <TabButton to={route1}> רביעי</TabButton>
@@ -131,10 +138,10 @@ function App() {
                 <Route path="/day1" element={<Day1 personsData={personsData} />} />
                 <Route path="/day2" element={<Day2 personsData={personsData} />} />
                 <Route path="/day3" element={<Day3 personsData={personsData} />} />
+                <Route path="/day4" element={<Day4 personsData={personsData} />} />
                 <Route path="/message2" element={<Message dayMessage="חמישי" />} />
                 <Route path="/message3" element={<Message dayMessage="שישי" />} />
-
-
+                <Route path="/message4" element={<Message dayMessage="שבת" />} />
               </Routes>{" "}
             </>
           )}

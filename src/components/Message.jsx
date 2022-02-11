@@ -16,7 +16,7 @@ export default function Message({ dayMessage }) {
   return (
     <Layout>
       <p>...אופס</p>
-      <p>?רוצה לגלות מה יהיה ביום {dayMessage}</p>
+      <p>?רוצה לגלות מה יהיה ב{dayMessage}</p>
       <p>?לאן את ממהרת</p>
       <p>תהני מהיום הזה הוא עוד לא נגמר</p>
       <ImageMessage src={oopsdayimage} alt="" />
